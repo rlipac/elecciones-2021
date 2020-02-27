@@ -1,0 +1,65 @@
+   html, body {
+        height: 100%;
+        margin: 0;
+        border: solid 5px red;
+        }
+        .content{
+       
+        min-height: 100%;
+        margin: 0 auto -50px;
+        }
+        .footer{
+           
+            height: 50px;
+            background-color: rgb(33, 13, 51);
+            color: white;
+        }
+
+         .card-container{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        img.candidato{
+        margin: auto;
+        max-width:280px;
+        min-width:280px;
+        max-height:280px;
+        min-height:280px;
+        }
+        img.candidato:hover{
+        margin: auto;
+        max-width:285px;
+        min-width:285px;
+        max-height:285px;
+        min-height:285px;
+        opacity: .8;
+        -moz-transition: .3s linear;
+        -webkit-transition: .3s ease-out;
+        transition: .3s linear;
+        }
+
+
+        .my-card{
+            width: 18rem;
+        }
+        .reseña{
+            display: none;
+        }
+        @media (max-width: 620px){
+            img.candidato{
+                
+            margin: auto;
+            max-width:98vw;
+            min-width:98vw;
+            max-height:50vh;
+            min-height:50vh;
+            }
+
+            .my-card{
+              
+                margin: auto;
+                min-width: 99vw;
+            }
+
+        }

@@ -1,0 +1,98 @@
+<%- include('partials/header') -%>
+<div class="jumbotron">
+    <h1 class="display-4">Elecciones 2020!</h1>
+    <p>Vota Ahora.</p>
+    <hr class="my-4">
+
+    <div class="container card-container">
+        
+        
+            <div class="card ">
+                <h5 class="name-candidato text-center my-2"><%= data.nameCandidato %></h5> 
+                <img class="card-img-top candidato-result" src="<%= data.urlImagenCandidato%>" alt="">
+                <div class="card-body">                       
+                <form action="/votar2" method="post" class="" onsubmit="return validar();">  
+                    <div class="form-group">             
+                        <input class="form-control my-1" type="text" name="dni" placeholder="Ingresa el numero de tu DNI " value="" id="dni"
+                            class="form-control-plaintext border" >
+                    </div>   
+                    <input class="form-control my-1" type="hidden" name="voto" placeholder="Nombre " value="<%= data.nameCandidato %>"
+                        class="form-control-plaintext border" required>                              
+                        <div class="form-group">
+                            <label class=""> Donde que cuidad eres</label>
+                            <select class="custom-select" name="ciudad" id="ciudad" >
+                              <option selected></option>
+                              <option value="Lima">Lima</option>
+                              <option value="Lambayeque">Lambayeque</option>
+                              <option value="Anchas">Anchas</option>
+                              <option value="Piura">Piura</option>
+                              <option value="Tumbez">Tumbez</option>
+                              <option value="Arequipa">Arequipa</option>
+                              <option value="Amazonas">Amazonas</option>
+                              <option value="Apurimac">Apurimac</option>
+                              <option value="Ayacucho">Ayacucho</option>
+                              <option value="Cajamarca">Cajamarca</option>
+                              <option value="Callao">Callao</option>
+                              <option value="Cusco">Cusco</option>
+                              <option value="Huancavelica">Huancavelica</option>
+                              <option value="Huanuco">Huanuco</option>
+                              <option value="Ica">Ica</option>
+                              <option value="Junin">Junin</option>
+                              <option value="La Libertad">La Libertad</option>
+                              <option value="loreto">loreto</option>
+                              <option value="Madre De Dios">Madre De Dios</option>
+                              <option value="moquegua">moquegua</option>
+                              <option value="Pasco">Pasco</option>
+                              <option value="Puno">Puno</option>                         
+                              <option value="San Martin">San Martin</option>                         
+                              <option value="Tacna">Tacna</option>
+                              <option value="Ucayali">Ucayali</option>                            
+                            </select>
+                          </div>
+
+                    <script>
+
+                        function validar() {
+                            var dni, ciudad, expresion;
+
+                                dni = document.getElementById("dni").value;
+                                ciudad = document.getElementById("ciudad").value;
+                                if(dni === "" || ciudad === ""){
+                                    alert("Llene todos los campos");
+                                    return false;
+                                }else if(dni.length <8 || dni.length>8){
+                                    alert("ingrese solo los 8 digitos de su DNI");
+                                    return false;
+
+                                }else if(isNaN(dni)){
+                                    alert("ingrese solo Numeros");
+                                    return false;
+
+                                }
+                           
+                        }
+                        
+                    </script> 
+
+                   <!--<script>
+
+                        function votar() {
+                            const votoIni = parseInt(document.getElementById("voto").value);
+                            votoMasUno = votoIni + 1;
+                            document.getElementById("votoMas").value = votoMasUno;
+                            console.log(votoMasUno);
+                        }
+                        votar();
+                    </script> -->
+                    <button type="submit" class="btn btn-primary">
+                        votar
+                    </button>
+            </div>
+           
+        </div>
+    </form>
+    </div>
+</div>
+
+
+<%- include('partials/footer') -%>

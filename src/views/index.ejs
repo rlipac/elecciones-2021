@@ -1,0 +1,64 @@
+
+<%- include('partials/header') -%>
+
+   
+    <div class="jumbotron">
+        <h1 class="display-4">Elecciones 2020!</h1>
+        <p>Elige al Candidato de tu preferencia.</p>
+        <hr class="my-4">
+      
+        
+        <div class="container card-container">
+            <% if (data) { %>
+                <% for (var i = 0; i < data.length; i++) { %>  
+            <div class="card my-2 mr-1 my-card">
+                <img class="card-img-top candidato" src="<%=data[i].urlImagenCandidato %>" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"><%=data[i].nameCandidato %></h5>
+                 
+                  <a href="/votar2/<%= data[i].idCandidato%>" class="btn btn-danger mt-1">Votar</a>
+                  <a target="_blank" href="<%= data[i].urlWikipedia%>" class="btn btn-primary mt-1">Ver mas</a>              
+              </div>  
+
+              <!-- <p>
+                
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" id="caja-reseña">
+                  Button with data-target
+                </button>
+              </p>
+              <div class="reseña" id="reseña">
+                
+                  <div class="card card-body">
+                    <%=data[i].reseña %>
+                  </div>
+                 
+              
+              </div>    
+            
+            -->
+
+            <!-- 
+              Porcentage de votos es igual al  numero de votos del candidato + 100 entre total de votos.
+              ejemplo:
+              const  nunVotosCandidato= 20;
+              const porcentage= 100;
+              const votosTotales= 100;
+              const resul = (nunVotosCandidato * porcentage)/votosTotales;  
+
+
+
+            -->
+        </div>
+        
+        <% } %>
+      <% } %> 
+    
+  
+         
+    </div>
+
+      
+
+
+<%- include('partials/footer') -%>
+   
