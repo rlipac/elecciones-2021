@@ -40,10 +40,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(morgan('dev')); // visualiza las peticiones y cambios 
 app.use(myConnection(mysql, { // configuramos la coneccion ala BD
     host: 'remotemysql.com',
-    user:'6ocG6iguIp',
-    password: 'EFoWXGqS27',
-    port: 3306,
-    database: '6ocG6iguIp'
+    user:'',
+    password: '',
+    port: 8080,
+    database: ''
 }, 'single'));
 
 
